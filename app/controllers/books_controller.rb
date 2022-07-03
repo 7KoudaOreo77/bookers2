@@ -11,11 +11,12 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.page(params[:page])
   end
 
   def show
     @book = Book.find(params[:id])
+    @book_comment = BookComment.new
   end
 
   def destroy
