@@ -1,21 +1,9 @@
 class Book < ApplicationRecord
   has_one_attached :image
   belongs_to :user
-  has_many :book_comments, dependent: :destroy
-  has_many :favorites, dependent: :destroy
 
   validates :title, presence: true
-  validates :introduction, presence: true
-
-  def create
-   @book = Book.new(book_params)
-   @book.user_id = current_user.id
-   if @book.save
-     redirect_to books_path
-   else
-      render :new
-   end
-  end
+  validates :body, presence: true
 
   def get_image
     if book.attached?

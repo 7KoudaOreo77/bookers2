@@ -3,21 +3,3 @@
 
 <h1>画像投稿フォーム</h1>
 
-<% if @book.errors.any? %>
- <%= @book.errors.count %>件のエラーが発生しましたerrors
- <ul>
-  <% @book.errors.full_messages.each do |message| %>
-   <li><%= message %></li>
-  <% end %>
- </ul>
-<% end %>
-
-  <%= form_with model: @book do |f| %>
-    <h4>画像</h4>
-      <%= f.file_field :titile, accept: "image/*" %>
-    <h4>title</h4>
-      <%= f.text_field :body %>
-    <h4>body</h4>
-      <%= f.text_area :caption %>
-    <%= f.submit '投稿' %>
-  <% end %>
