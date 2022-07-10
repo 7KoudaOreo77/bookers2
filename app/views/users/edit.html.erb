@@ -1,6 +1,16 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
 
+<% if @user.errors.any? %>
+ <h4>User info</h4>
+ <%= @user.errors.count %>error prohibited this obj from being saved:
+ <ul>
+  <% @user.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
+<% end %>
+
 <h2>プロフィール画像</h2>
 <%= form_with model: @user do |f| %>
  <label for="inputName">Name</label>
