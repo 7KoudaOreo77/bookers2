@@ -25,8 +25,8 @@ class Book < ApplicationRecord
     end
   end
 
-  @book = Book.find(params[:id])
-  @book.get_image
+  #@book = Book.find(params[:id])
+  #@book.get_image
 
   def get_image
     unless book.attached?
