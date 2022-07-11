@@ -6,18 +6,18 @@ class UsersController < ApplicationController
    if @user.new(users_params)
       flash[:notice] = "Welcome! You have signed up successfully."
       redirect_to book_path(@book.id)
-    else
+   else
       render :new
-    end
+   end
   end
 
   def create
    @user = login(params[:name], params[:email], params[:password]
-   if @user
+   if @user.sa
      redirect_back_or_to root_path, success: "Signed in successfully."
-    else
+   else
       render :sign_in
-    end
+   end
   end
 
   def show
