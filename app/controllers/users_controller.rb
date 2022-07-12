@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  
+  
   def new
    @user = User.new
    @book = Book.new(book_params)
@@ -15,6 +17,7 @@ class UsersController < ApplicationController
    @user = login(params[:name], params[:email], params[:password])
    if @user = current_user.id
     flash[:sign_in] = "Signed in successfully."
+    redirect_to user_path(current_@user.id)
    else
       render :sign_in
    end
@@ -22,7 +25,7 @@ class UsersController < ApplicationController
 
   def index
    @users = User.all
-   @user = User.new
+   @user = current_user
   end
 
   def show
