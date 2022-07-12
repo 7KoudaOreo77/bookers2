@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = login(params[:name], params[:email], params[:password]
-   if
-     redirect_back_or_to root_path, success: "Signed in successfully."
+   @user = login(params[:name], params[:email], params[:password])
+   if @user = current_user.id
+    flash[:sign_in] = "Signed in successfully."
    else
       render :sign_in
    end
