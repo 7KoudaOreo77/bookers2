@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  
-  
+
+
   def new
    @user = User.new
    @book = Book.new(book_params)
