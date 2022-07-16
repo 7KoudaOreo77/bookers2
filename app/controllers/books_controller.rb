@@ -20,6 +20,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     #@books = Book.page(params[:page])
+    @user = current_user
   end
 
   def show
