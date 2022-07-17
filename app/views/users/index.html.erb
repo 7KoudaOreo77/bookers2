@@ -1,104 +1,46 @@
 <main>
-        <p id="notice"></p>
-        <div class="container px-5 px-sm-0">
-
-
+ <p id="notice"></p>
+ <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-md-3">
-      <% render 'books/info', user: @user %></div>
-
-
-
-    <div class="col-md-8 offset-md-1">
-      <h2>Users</h2>
+   <div class="col-md-3">
+    <%= render 'info', user: @user %>
+     <%= link_to edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block edit_user_id" do %>
+      <svg class="svg-inline--fa fa-user-cog fa-w-20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M610.5 373.3c2.6-14.1 2.6-28.5 0-42.6l25.8-14.9c3-1.7 4.3-5.2 3.3-8.5-6.7-21.6-18.2-41.2-33.2-57.4-2.3-2.5-6-3.1-9-1.4l-25.8 14.9c-10.9-9.3-23.4-16.5-36.9-21.3v-29.8c0-3.4-2.4-6.4-5.7-7.1-22.3-5-45-4.8-66.2 0-3.3.7-5.7 3.7-5.7 7.1v29.8c-13.5 4.8-26 12-36.9 21.3l-25.8-14.9c-2.9-1.7-6.7-1.1-9 1.4-15 16.2-26.5 35.8-33.2 57.4-1 3.3.4 6.8 3.3 8.5l25.8 14.9c-2.6 14.1-2.6 28.5 0 42.6l-25.8 14.9c-3 1.7-4.3 5.2-3.3 8.5 6.7 21.6 18.2 41.1 33.2 57.4 2.3 2.5 6 3.1 9 1.4l25.8-14.9c10.9 9.3 23.4 16.5 36.9 21.3v29.8c0 3.4 2.4 6.4 5.7 7.1 22.3 5 45 4.8 66.2 0 3.3-.7 5.7-3.7 5.7-7.1v-29.8c13.5-4.8 26-12 36.9-21.3l25.8 14.9c2.9 1.7 6.7 1.1 9-1.4 15-16.2 26.5-35.8 33.2-57.4 1-3.3-.4-6.8-3.3-8.5l-25.8-14.9zM496 400.5c-26.8 0-48.5-21.8-48.5-48.5s21.8-48.5 48.5-48.5 48.5 21.8 48.5 48.5-21.7 48.5-48.5 48.5zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm201.2 226.5c-2.3-1.2-4.6-2.6-6.8-3.9l-7.9 4.6c-6 3.4-12.8 5.3-19.6 5.3-10.9 0-21.4-4.6-28.9-12.6-18.3-19.8-32.3-43.9-40.2-69.6-5.5-17.7 1.9-36.4 17.9-45.7l7.9-4.6c-.1-2.6-.1-5.2 0-7.8l-7.9-4.6c-16-9.2-23.4-28-17.9-45.7.9-2.9 2.2-5.8 3.2-8.7-3.8-.3-7.5-1.2-11.4-1.2h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c10.1 0 19.5-3.2 27.2-8.5-1.2-3.8-2-7.7-2-11.8v-9.2z"></path></svg><!-- <i class="fas fa-user-cog"></i> Font Awesome fontawesome.com -->
+     <% end %>
+     <%= render 'books/list', book: @book %>
+   </div>
+   <div class="col-md-8 offset_md_1">
+    <h2>Users</h2>
       <table class="table">
-  <thead>
-    <tr>
-      <th>image</th>
-      <th>name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBODBuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--ba2ffcc909b54221ae9a7ee3b23a3a1b50b7369d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>okokoko</td>
-        <td><a class="user_26840" href="/users/26840">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUluQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--fdfb3e7de312e7653e0fd2bbb73de1330794f820/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>aaa</td>
-        <td><a class="user_26841" href="/users/26841">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOVFuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bf78cf41870e92b373dcfb596d7e900c20ed54b6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>bbbbbb</td>
-        <td><a class="user_26842" href="/users/26842">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOWduQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0f8fc5896e343c17041660b6da8dba4ad1b31e6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>aa</td>
-        <td><a class="user_26843" href="/users/26843">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN29uQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--43165ecaac04450a89c283af46858e7614da2a24/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>aaaa</td>
-        <td><a class="user_26836" href="/users/26836">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOXNuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--2d29a084f03bf634339f0e3d349603104771a4b7/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>test2</td>
-        <td><a class="user_26844" href="/users/26844">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN1luQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--50647ef34b61b5234217729cc159d666d684a00e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>bb</td>
-        <td><a class="user_26834" href="/users/26834">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2duQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--7b13f667705630533574176efa45ba46ab4e9f6d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>qqq</td>
-        <td><a class="user_26835" href="/users/26835">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN3duQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--dacabcdd8a99a92a4be948bef744b9fd0f224716/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>Olivia</td>
-        <td><a class="user_26831" href="/users/26831">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNzRuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--29dd43c668918297ff8920543fcb496223b8e494/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>サンプルタロウ</td>
-        <td><a class="user_26832" href="/users/26832">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOEFuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6b36419318b9f63706f6522de16e9ec3ce05920b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>Lucas</td>
-        <td><a class="user_26833" href="/users/26833">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOFFuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e0a3441949f603d8a23c99962a6a76e0a5e10283/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>tomoya ito</td>
-        <td><a class="user_26837" href="/users/26837">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOGtuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d5b33ebfb9b6ceab71ff5a0d1dce0275d8b39057/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>moe</td>
-        <td><a class="user_26838" href="/users/26838">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOHNuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--b33abe6bbd0401e020b86dc30843e0d09a84c4e9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>あああ</td>
-        <td><a class="user_26839" href="/users/26839">Show</a></td>
-      </tr>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOTRuQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--55ad369a77964ee39fc84ba8787976dace5823a7/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>rumi</td>
-        <td><a class="user_26845" href="/users/26845">Show</a></td>
-      </tr>
-  </tbody>
-</table>
+       <thead>
+        <tr>
+         <th>image</th>
+         <th>name</th>
+         <th colspan="3"></th>
+        </tr>
+       </thead>
+       <tbody>
 
-    </div>
+         <% @users.each do |user| %>
+          <tr>
+           <td>
+           <% if user.profile_image.attached? %>
+            <%= image_tag user.get_profile_image(100,100) %>
+           <% else %>
+            <%= image_tag 'no_image', size: "200x200" %>
+           <% end %>
+
+          </td>
+          <td><%= @user.name %></td>
+          <td>
+           <%= link_to"Show", user_path(user.id) %>
+          </td>
+          </tr>
+         <% end %>
+
+       </tbody>
+      </table>
+   </div>
   </div>
-</div>
-      </main>
+ </div>
+</main>
