@@ -1,28 +1,6 @@
 class UsersController < ApplicationController
 
 
-  def new
-   @user = User.new
-   @book = Book.new(book_params)
-
-   if @user.new(users_params)
-      flash[:hoge] = "Welcome! You have signed up successfully."
-      redirect_to book_path(@book.id)
-   else
-      render :new
-   end
-  end
-
-  def create
-   @user = login(params[:name], params[:email], params[:password])
-   if @user = current_user.id
-    flash[:hoge] = "Signed in successfully."
-    redirect_to user_path(current_@user.id)
-   else
-    flash[:notice] = "Signed out successfully."
-    render :top
-   end
-  end
 
   def index
    @users = User.all
@@ -41,7 +19,7 @@ class UsersController < ApplicationController
     if @user == current_user
      render "edit"
     else
-     redirect_to users_path
+     redirect_to users_path(@user.id)
     end
   end
 
