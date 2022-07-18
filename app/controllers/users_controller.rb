@@ -6,7 +6,7 @@ class UsersController < ApplicationController
    @book = Book.new(book_params)
 
    if @user.new(users_params)
-      flash[:notice] = "Welcome! You have signed up successfully."
+      flash[:hoge] = "Welcome! You have signed up successfully."
       redirect_to book_path(@book.id)
    else
       render :new
@@ -16,10 +16,11 @@ class UsersController < ApplicationController
   def create
    @user = login(params[:name], params[:email], params[:password])
    if @user = current_user.id
-    flash[:sign_in] = "Signed in successfully."
+    flash[:hoge] = "Signed in successfully."
     redirect_to user_path(current_@user.id)
    else
-      render :sign_in
+    flash[:notice] = "Signed out successfully."
+    render :top
    end
   end
 
@@ -37,13 +38,18 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user == current_user
+     render "edit"
+    else
+     redirect_to users_path
+    end
   end
 
   def update
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      flash[:success] = "You have updated user successfully."
+      flash[:hoge] = "You have updated user successfully."
       redirect_to user_path(@user.id)
     else
       render :edit

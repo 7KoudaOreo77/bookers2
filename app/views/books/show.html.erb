@@ -1,4 +1,4 @@
- <p id="notice"></p>
+<main>
  <div class="container px-5 px-sm-0">
   <div class="row">
    <div class="col-md-3">
@@ -24,24 +24,22 @@
             <% end %>
            </td>
            <td>
-            <%= link_to user_path(current_user.id), class:"book_id" do %>
+            <%= link_to book_path(@book.id), class:"book_id" do %>
              <%= @book.title %>
             <% end %>
            </td>
            <td><%= @book.body %></td>
+           <% if @user ==current_user %>
             <td>
-             <% if @user ==current_user %>
-              <%= link_to "Edit", edit_book_path, class:"btn btn-sm btn-success edit_book_id" %>
+             <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success edit_book_id" %>
             </td>
             <td>
-             <%= link_to "Destroy", book_path(@book), class:"btn btn-sm btn-danger destroy_book_21179", method: :delete %></td>
-             <% end %>
+             <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger destroy_book_id"  %>
+            </td>
+           <% end %>
         </tr>
-      </tbody></table>
+       </tbody>
+      </table>
     </div>
-
-
-
-  </tbody>
-</table>
-    </div>
+  </div>
+</main>
